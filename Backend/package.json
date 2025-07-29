@@ -1,0 +1,13 @@
+{
+   "type": "module",
+   "name": "Zigtex",
+   "dependencies": {
+      "@google/genai": "^1.11.0",
+      "axios": "^1.11.0",
+      "cors": "^2.8.5",
+      "dotenv": "^17.2.1",
+      "env": "^0.0.2",
+      "express": "^5.1.0",
+      "openai": "^5.10.2"
+   }
+}
