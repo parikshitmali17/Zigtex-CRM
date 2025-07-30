@@ -6,6 +6,7 @@ import { router as AIEmailgenerationRouter} from "./AI/EmailGeneration.js";
 
 import { connectDB } from "./config.js/db.js";
 import SaveCompaniesData from "./middleware/SaveCompaniesData.js";
+import  GetAllCompaniesData  from "./middleware/GetAllComapniesData.js";
 
 
 
@@ -17,7 +18,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.post('/api/companies', SaveCompaniesData); // Endpoint to save company data
+app.post('/api/SaveCompaniesData', SaveCompaniesData); // Endpoint to save company data
+app.get('/api/GetAllCompaniesData', GetAllCompaniesData); // Endpoint to get all companies data
 app.use('/', AIEmailgenerationRouter);   // AI Email Generation Router
 
 
