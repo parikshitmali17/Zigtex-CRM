@@ -1,6 +1,13 @@
 // const express = require('express');
 import express from "express"
 import { router as AIEmailgenerationRouter} from "./AI/EmailGeneration.js";
+import dotenv from "dotenv";
+import { connectDB } from "./config.js/db.js";
+
+
+dotenv.config();
+connectDB(); // Connect to MongoDB
+
 
 const app = express();
 
