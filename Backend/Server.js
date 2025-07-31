@@ -8,6 +8,8 @@ import { connectDB } from "./config.js/db.js";
 import SaveCompaniesData from "./middleware/SaveCompaniesData.js";
 import  GetAllCompaniesData  from "./middleware/GetAllComapniesData.js";
 import EditCompanyDetails from "./middleware/EditCompanyDetails.js";
+import SaveCompaniesPOCData from "./middleware/SaveCompaniesPOCData.js";
+import GetAllCompaniesPOCData from "./middleware/GetAllPOCData.js";
 
 
 
@@ -22,8 +24,8 @@ app.put("/api/EditCompanyDetails/:id", EditCompanyDetails); // Endpoint to edit 
 app.post('/api/SaveCompaniesData', SaveCompaniesData); // Endpoint to save company data
 app.get('/api/GetAllCompaniesData', GetAllCompaniesData); // Endpoint to get all companies data
 app.use('/', AIEmailgenerationRouter);   // AI Email Generation Router
-
-
+app.post("/api/SaveCompaniesPOCData", SaveCompaniesPOCData); // Endpoint to save POC data
+app.get("/api/GetAllCompaniesPOCData", GetAllCompaniesPOCData); // Endpoint to get all POC data
 
 
 
