@@ -6,7 +6,9 @@ const companySchema = new mongoose.Schema({
   // Created_By:{type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
   Created_At: { type: Date, default: Date.now },
   Created_By: { type: String, required: true },
-Account_Owner: { type: String, required: true },
+  // Created_By:{type :mongoose.Schema.Types.ObjectId,ref:"ComapaniesPOC", required: true}, 
+  
+// Account_Owner: { type: String, required: true },
   // Account_Owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   No_Of_Employees: { type: Number, required: true, min: 1 },
   Linkdlen_profile: { type: String },

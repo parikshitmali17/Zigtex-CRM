@@ -13,6 +13,7 @@ import GetAllCompaniesPOCData from "./middleware/GetAllPOCData.js";
 import EditCompanyPOCData from "./middleware/EditPOCData.js";
 import DeleteCompaniesPOCData from "./middleware/DeleteCompaniesPOCData.js";
 import DeleteCompaniesDetails from "./middleware/DeleteCompaniesDetails.js";
+import getPOCWithCompanies from "./middleware/GetPOCWithCompanies.js";
 
 
 
@@ -30,6 +31,7 @@ app.post('/api/SaveCompaniesData', SaveCompaniesData); // Endpoint to save compa
 app.get('/api/GetAllCompaniesData', GetAllCompaniesData); // Endpoint to get all companies data
 app.delete('/api/DeleteCompaniesDetails/:id', DeleteCompaniesDetails); // Endpoint to delete company details
 
+// app.get("/api/GetPOCWithCompanies/:id", getPOCWithCompanies); // Endpoint to get POC with companies
 
 // Companies POC Details Endpoints
 app.post("/api/SaveCompaniesPOCData", SaveCompaniesPOCData); // Endpoint to save POC data

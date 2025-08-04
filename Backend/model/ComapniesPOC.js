@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+
+
 const ComapniesPOC = new mongoose.Schema({
   name: { type: String, required: true },
   Email: { type: String, required: true },
