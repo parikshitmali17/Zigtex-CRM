@@ -12,6 +12,7 @@ import SaveCompaniesPOCData from "./middleware/SaveCompaniesPOCData.js";
 import GetAllCompaniesPOCData from "./middleware/GetAllPOCData.js";
 import EditCompanyPOCData from "./middleware/EditPOCData.js";
 import DeleteCompaniesPOCData from "./middleware/DeleteCompaniesPOCData.js";
+import DeleteCompaniesDetails from "./middleware/DeleteCompaniesDetails.js";
 
 
 
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.put("/api/EditCompanyDetails/:id", EditCompanyDetails); // Endpoint to edit company details
 app.post('/api/SaveCompaniesData', SaveCompaniesData); // Endpoint to save company data
 app.get('/api/GetAllCompaniesData', GetAllCompaniesData); // Endpoint to get all companies data
+app.delete('/api/DeleteCompaniesDetails/:id', DeleteCompaniesDetails); // Endpoint to delete company details
 
 
 // Companies POC Details Endpoints
