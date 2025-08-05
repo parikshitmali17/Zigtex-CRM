@@ -14,6 +14,10 @@ import EditCompanyPOCData from "./middleware/EditPOCData.js";
 import DeleteCompaniesPOCData from "./middleware/DeleteCompaniesPOCData.js";
 import DeleteCompaniesDetails from "./middleware/DeleteCompaniesDetails.js";
 import getPOCWithCompanies from "./middleware/GetPOCWithCompanies.js";
+import SaveTaskDetails from "./middleware/SaveTaskDetails.js";
+import GetAllTaskDetails from "./middleware/GetAllTaskDetails.js";
+import EditTaskDetails from "./middleware/EditTaskDetails.js";
+import DeleteTask from "./middleware/DeleteTask.js";
 
 
 
@@ -38,6 +42,13 @@ app.post("/api/SaveCompaniesPOCData", SaveCompaniesPOCData); // Endpoint to save
 app.get("/api/GetAllCompaniesPOCData", GetAllCompaniesPOCData); // Endpoint to get all POC data
 app.put("/api/EditCompanyPOCData/:id", EditCompanyPOCData); // Endpoint to edit POC data
 app.delete("/api/DeleteCompaniesPOCData/:id", DeleteCompaniesPOCData); // Endpoint to delete POC data
+
+
+//Endpooints for tasks
+app.post('/api/SaveTaskDetails', SaveTaskDetails); // Endpoint to save task details
+app.get('/api/GetAllTaskDetails', GetAllTaskDetails); // Endpoint to get all task details
+app.put('/api/EditTaskDetails/:id', EditTaskDetails); // Endpoint to edit task details
+app.delete('/api/DeleteTask/:id', DeleteTask); // Endpoint to delete task details
 
 
 //

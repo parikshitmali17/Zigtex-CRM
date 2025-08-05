@@ -1,6 +1,6 @@
 {
    "type": "module",
-   "name": "Zigtex",
+   "name": "Zigtex By Parikshit Mali",
    "dependencies": {
       "@google/genai": "^1.11.0",
       "axios": "^1.11.0",
