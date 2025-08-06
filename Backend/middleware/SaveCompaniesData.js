@@ -1,9 +1,9 @@
 import company from "../model/Companies.js";
 const SaveCompaniesData=async(req,res)=>{
     try{
-        const {name, website, Created_By, Account_Owner, No_Of_Employees, Linkdlen_profile, Address} = req.body;
-
-        if(!name || !website || !Created_By || !Account_Owner || !No_Of_Employees || !Address){
+        const {name, website, Created_By, Account_Owner, No_Of_Employees, Linkdlen_profile, Address,SalesPipeline} = req.body;
+console.log(req.body);
+        if(!name || !website || !Created_By || !No_Of_Employees || !Address){
             res.status(400).json({error: "All fields are required"});
             return;
         }
@@ -15,7 +15,15 @@ const SaveCompaniesData=async(req,res)=>{
             Account_Owner,
             No_Of_Employees,
             Linkdlen_profile,
-            Address
+            Address,
+            SalesPipeline: {
+                MeetingScheduled: SalesPipeline.MeetingScheduled || false,
+                Qualification: SalesPipeline.Qualification || false, 
+                ProposalSent: SalesPipeline.ProposalSent || false,
+                OnNegotiation: SalesPipeline.OnNegotiation || false,
+                ClosedWon: SalesPipeline.ClosedWon || false,
+                ClosedLost: SalesPipeline.ClosedLost || false,  
+            }     
         });
 
         await Company.save();

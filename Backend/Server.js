@@ -18,6 +18,7 @@ import SaveTaskDetails from "./middleware/SaveTaskDetails.js";
 import GetAllTaskDetails from "./middleware/GetAllTaskDetails.js";
 import EditTaskDetails from "./middleware/EditTaskDetails.js";
 import DeleteTask from "./middleware/DeleteTask.js";
+import GetSalesPipeline from "./middleware/GetSalesPipeline.js";
 
 
 
@@ -50,8 +51,11 @@ app.get('/api/GetAllTaskDetails', GetAllTaskDetails); // Endpoint to get all tas
 app.put('/api/EditTaskDetails/:id', EditTaskDetails); // Endpoint to edit task details
 app.delete('/api/DeleteTask/:id', DeleteTask); // Endpoint to delete task details
 
+// Endpoint to get Sales Pipeline Data
+app.get('/api/GetSalesPipeline/', GetSalesPipeline); // Endpoint to get sales pipeline data
 
-//
+
+
 // AI Email Generation Endpoint
 app.use('/', AIEmailgenerationRouter);   // AI Email Generation Router
 

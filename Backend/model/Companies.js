@@ -12,7 +12,17 @@ const companySchema = new mongoose.Schema({
   // Account_Owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   No_Of_Employees: { type: Number, required: true, min: 1 },
   Linkdlen_profile: { type: String },
-  Address: { type: String, required: true }})
+  Address: { type: String, required: true },
+  SalesPipeline:{
+    MeetingScheduled: { type: Boolean, default: false },
+    Qualification: { type: Boolean, default:false },
+    ProposalSent: { type: Boolean, default: false },
+    OnNegotiation: { type: Boolean, default: false },
+    ClosedWon: { type: Boolean, default: false },
+    ClosedLost: { type: Boolean, default: false },
+ 
+  }  
+})
 
   const company=mongoose.model("Company", companySchema);
   export default company;
