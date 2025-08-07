@@ -59,6 +59,10 @@ const WeightValuePercentageMeetingsScheduled = WeightValuePercentageMeetingsSche
         const WeightValueQualification =TotalQualificationValue[0].total*WeightValuePercentageQualification/100;
         const WeightValueProposalSent =TotalProposalSentValue[0].total*WeightValuePercentageProposalSent/100;
         const WeightValueOnNegotiation =TotalOnNegotiationValue[0].total*WeightValuePercentageOnNegotiation/100;
+
+
+
+        
         
     res.status(200).json({
             TotalMeetingsScheduleLost,
@@ -87,7 +91,15 @@ const WeightValuePercentageMeetingsScheduled = WeightValuePercentageMeetingsSche
             WeightValueMeetingsScheduled,
             WeightValueQualification,
             WeightValueProposalSent,
-            WeightValueOnNegotiation
+            WeightValueOnNegotiation,
+
+            ConversionRateMeetingScheduled: (TotalMeetingsScheduleWon / (TotalMeetingsScheduleWon + TotalMeetingsScheduleLost) * 100).toFixed(2) || 0,
+            ConversionRateQualification: (TotalQualificationWon / (TotalQualificationWon + TotalQualificationLost) * 100).toFixed(2)  || 0,
+            ConversionRateProposalSent: (TotalProposalSentWon / (TotalProposalSentWon + TotalProposalSentLost) * 100).toFixed(2)  || 0,
+            ConversionRateOnNegotiation: (TotalOnNegotiationWon / (TotalOnNegotiationWon + TotalOnNegotiationLost) * 100 ).toFixed(2) || 0,
+         
+
+
 
 
 

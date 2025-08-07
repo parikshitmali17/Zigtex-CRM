@@ -31,6 +31,12 @@ const companySchema = new mongoose.Schema({
     WeightValuePercentageQualification: { type: Number, min:0, max:100, default: 0 }, // Percentage value for weightage
     WeightValuePercentageProposalSent: { type: Number, min:0, max:100, default: 0 }, // Percentage value for weightage
     WeightValuePercentageOnNegotiation: { type: Number, min:0, max:100, default: 0 }, // Percentage value for weightage
+
+
+     ConversionRateMeetingScheduled: { type: Number, min:0, max:100, default: 0 }, // Conversion rate for the sales pipeline
+    ConversionRateQualification: { type: Number, min:0, max:100, default: 0 }, // Conversion rate for the sales pipeline
+    ConversionRateProposalSent: { type: Number, min:0, max:100, default: 0 }, // Conversion rate for the sales pipeline
+    ConversionRateOnNegotiation: { type: Number, min:0, max:100, default: 0 }, // Conversion rate for the sales pipeline
     
   }  
 })
