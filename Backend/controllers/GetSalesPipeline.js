@@ -44,15 +44,15 @@ const GetSalesPipeline=async (req, res) => {
         const WeightValuePercentageOnNegotiationArray= await company.find({},{_id: 0, name: 1,"SalesPipeline.WeightValuePercentageOnNegotiation": 1});
         
 
-const WeightValuePercentageMeetingsScheduled = WeightValuePercentageMeetingsScheduledArray.reduce((acc, curr) => acc + (curr.SalesPipeline.WeightValuePercentageMeetingScheduled || 0), 0);
+        const WeightValuePercentageMeetingsScheduled = WeightValuePercentageMeetingsScheduledArray.reduce((acc, curr) => acc + (curr.SalesPipeline.WeightValuePercentageMeetingScheduled || 0), 0);
         const WeightValuePercentageQualification = WeightValuePercentageQualificationArray.reduce((acc, curr) => acc + (curr.SalesPipeline.WeightValuePercentageQualification || 0), 0);
         const WeightValuePercentageProposalSent = WeightValuePercentageProposalSentArray.reduce((acc, curr) => acc + (curr.SalesPipeline.WeightValuePercentageProposalSent || 0), 0);
         const WeightValuePercentageOnNegotiation = WeightValuePercentageOnNegotiationArray.reduce((acc, curr) => acc + (curr.SalesPipeline.WeightValuePercentageOnNegotiation || 0), 0);
 
         // console.log("WeightValueMeetingsScheduled", WeightValuePercentageMeetingsScheduled);
 
-        console.log("TotalMeetingsScheduledValue", TotalMeetingsScheduledValue[0].total);
-        console.log("WeightValuePercentageMeetingsScheduled", WeightValuePercentageMeetingsScheduled);
+        // console.log("TotalMeetingsScheduledValue", TotalMeetingsScheduledValue[0].total);
+        // console.log("WeightValuePercentageMeetingsScheduled", WeightValuePercentageMeetingsScheduled);
 
 
         const WeightValueMeetingsScheduled =TotalMeetingsScheduledValue[0].total*WeightValuePercentageMeetingsScheduled/100;
@@ -97,12 +97,7 @@ const WeightValuePercentageMeetingsScheduled = WeightValuePercentageMeetingsSche
             ConversionRateQualification: (TotalQualificationWon / (TotalQualificationWon + TotalQualificationLost) * 100).toFixed(2)  || 0,
             ConversionRateProposalSent: (TotalProposalSentWon / (TotalProposalSentWon + TotalProposalSentLost) * 100).toFixed(2)  || 0,
             ConversionRateOnNegotiation: (TotalOnNegotiationWon / (TotalOnNegotiationWon + TotalOnNegotiationLost) * 100 ).toFixed(2) || 0,
-         
-
-
-
-
-
+        
         });
 
     } catch (error) {
