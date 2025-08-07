@@ -29,6 +29,11 @@ const SaveCompaniesData=async(req,res)=>{
                 ProposalSentValue: SalesPipeline.ProposalSentValue || 0,
                 OnNegotiationValue: SalesPipeline.OnNegotiationValue || 0,
                 ClosedWonValue: SalesPipeline.ClosedWonValue || 0,
+
+              WeightValuePercentageMeetingScheduled: SalesPipeline.WeightValuePercentageMeetingScheduled || 0,
+              WeightValuePercentageQualification: SalesPipeline.WeightValuePercentageQualification || 0,
+              WeightValuePercentageProposalSent: SalesPipeline.WeightValuePercentageProposalSent || 0,
+              WeightValuePercentageOnNegotiation: SalesPipeline.WeightValuePercentageOnNegotiation || 0,
             }     
         });
 

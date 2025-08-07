@@ -36,6 +36,29 @@ const GetSalesPipeline=async (req, res) => {
             { $group: { _id: null, total: { $sum: "$SalesPipeline.ClosedWonValue" } } },
         ]);
         const TotalClosedWonValue = ClosedWonValue || 0;
+
+        
+       const WeightValuePercentageMeetingsScheduledArray= await company.find({},{_id: 0, name: 1,"SalesPipeline.WeightValuePercentageMeetingScheduled": 1});
+        const WeightValuePercentageQualificationArray= await company.find({},{_id: 0, name: 1,"SalesPipeline.WeightValuePercentageQualification": 1});
+        const WeightValuePercentageProposalSentArray= await company.find({},{_id: 0, name: 1,"SalesPipeline.WeightValuePercentageProposalSent": 1});
+        const WeightValuePercentageOnNegotiationArray= await company.find({},{_id: 0, name: 1,"SalesPipeline.WeightValuePercentageOnNegotiation": 1});
+        
+
+const WeightValuePercentageMeetingsScheduled = WeightValuePercentageMeetingsScheduledArray.reduce((acc, curr) => acc + (curr.SalesPipeline.WeightValuePercentageMeetingScheduled || 0), 0);
+        const WeightValuePercentageQualification = WeightValuePercentageQualificationArray.reduce((acc, curr) => acc + (curr.SalesPipeline.WeightValuePercentageQualification || 0), 0);
+        const WeightValuePercentageProposalSent = WeightValuePercentageProposalSentArray.reduce((acc, curr) => acc + (curr.SalesPipeline.WeightValuePercentageProposalSent || 0), 0);
+        const WeightValuePercentageOnNegotiation = WeightValuePercentageOnNegotiationArray.reduce((acc, curr) => acc + (curr.SalesPipeline.WeightValuePercentageOnNegotiation || 0), 0);
+
+        // console.log("WeightValueMeetingsScheduled", WeightValuePercentageMeetingsScheduled);
+
+        console.log("TotalMeetingsScheduledValue", TotalMeetingsScheduledValue[0].total);
+        console.log("WeightValuePercentageMeetingsScheduled", WeightValuePercentageMeetingsScheduled);
+
+
+        const WeightValueMeetingsScheduled =TotalMeetingsScheduledValue[0].total*WeightValuePercentageMeetingsScheduled/100;
+        const WeightValueQualification =TotalQualificationValue[0].total*WeightValuePercentageQualification/100;
+        const WeightValueProposalSent =TotalProposalSentValue[0].total*WeightValuePercentageProposalSent/100;
+        const WeightValueOnNegotiation =TotalOnNegotiationValue[0].total*WeightValuePercentageOnNegotiation/100;
         
     res.status(200).json({
             TotalMeetingsScheduleLost,
@@ -54,6 +77,20 @@ const GetSalesPipeline=async (req, res) => {
             TotalProposalSentValue,
             TotalOnNegotiationValue,
             TotalClosedWonValue,
+
+            WeightValuePercentageMeetingsScheduled,
+            WeightValuePercentageQualification,
+            WeightValuePercentageProposalSent,
+            WeightValuePercentageOnNegotiation,
+        
+
+            WeightValueMeetingsScheduled,
+            WeightValueQualification,
+            WeightValueProposalSent,
+            WeightValueOnNegotiation
+
+
+
         });
 
     } catch (error) {

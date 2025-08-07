@@ -26,8 +26,15 @@ const companySchema = new mongoose.Schema({
     ProposalSentValue: { type: Number, default: 0 },
     OnNegotiationValue: { type: Number, default: 0 },
  ClosedWonValue: { type: Number, default: 0 },
+
+    WeightValuePercentageMeetingScheduled: { type: Number, min:0, max:100, default: 0 }, // Percentage value for weightage
+    WeightValuePercentageQualification: { type: Number, min:0, max:100, default: 0 }, // Percentage value for weightage
+    WeightValuePercentageProposalSent: { type: Number, min:0, max:100, default: 0 }, // Percentage value for weightage
+    WeightValuePercentageOnNegotiation: { type: Number, min:0, max:100, default: 0 }, // Percentage value for weightage
+    
   }  
 })
 
   const company=mongoose.model("Company", companySchema);
   export default company;
+  
