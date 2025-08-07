@@ -5,20 +5,20 @@ dotenv.config();
 import { router as AIEmailgenerationRouter} from "./AI/EmailGeneration.js";
 
 import { connectDB } from "./config/db.js";
-import SaveCompaniesData from "./middleware/SaveCompaniesData.js";
-import  GetAllCompaniesData  from "./middleware/GetAllComapniesData.js";
-import EditCompanyDetails from "./middleware/EditCompanyDetails.js";
-import SaveCompaniesPOCData from "./middleware/SaveCompaniesPOCData.js";
-import GetAllCompaniesPOCData from "./middleware/GetAllPOCData.js";
-import EditCompanyPOCData from "./middleware/EditPOCData.js";
-import DeleteCompaniesPOCData from "./middleware/DeleteCompaniesPOCData.js";
-import DeleteCompaniesDetails from "./middleware/DeleteCompaniesDetails.js";
-import getPOCWithCompanies from "./middleware/GetPOCWithCompanies.js";
-import SaveTaskDetails from "./middleware/SaveTaskDetails.js";
-import GetAllTaskDetails from "./middleware/GetAllTaskDetails.js";
-import EditTaskDetails from "./middleware/EditTaskDetails.js";
-import DeleteTask from "./middleware/DeleteTask.js";
-import GetSalesPipeline from "./middleware/GetSalesPipeline.js";
+import SaveCompaniesData from "./controllers/SaveCompaniesData.js";
+import  GetAllCompaniesData  from "./controllers/GetAllComapniesData.js";
+import EditCompanyDetails from "./controllers/EditCompanyDetails.js";
+import SaveCompaniesPOCData from "./controllers/SaveCompaniesPOCData.js";
+import GetAllCompaniesPOCData from "./controllers/GetAllPOCData.js";
+import EditCompanyPOCData from "./controllers/EditPOCData.js";
+import DeleteCompaniesPOCData from "./controllers/DeleteCompaniesPOCData.js";
+import DeleteCompaniesDetails from "./controllers/DeleteCompaniesDetails.js";
+import getPOCWithCompanies from "./controllers/GetPOCWithCompanies.js";
+import SaveTaskDetails from "./controllers/SaveTaskDetails.js";
+import GetAllTaskDetails from "./controllers/GetAllTaskDetails.js";
+import EditTaskDetails from "./controllers/EditTaskDetails.js";
+import DeleteTask from "./controllers/DeleteTask.js";
+import GetSalesPipeline from "./controllers/GetSalesPipeline.js";
 
 
 
