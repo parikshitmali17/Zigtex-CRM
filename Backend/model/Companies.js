@@ -20,7 +20,12 @@ const companySchema = new mongoose.Schema({
     OnNegotiation: { type: Boolean, default: false },
     ClosedWon: { type: Boolean, default: false },
     ClosedLost: { type: Boolean, default: false },
- 
+
+    MeetingsScheduledValue: { type: Number, default: 0 },
+    QualificationValue: { type: Number, default: 0 },
+    ProposalSentValue: { type: Number, default: 0 },
+    OnNegotiationValue: { type: Number, default: 0 },
+ ClosedWonValue: { type: Number, default: 0 },
   }  
 })
 
