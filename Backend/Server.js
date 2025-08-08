@@ -19,6 +19,9 @@ import GetAllTaskDetails from "./controllers/GetAllTaskDetails.js";
 import EditTaskDetails from "./controllers/EditTaskDetails.js";
 import DeleteTask from "./controllers/DeleteTask.js";
 import GetSalesPipeline from "./controllers/GetSalesPipeline.js";
+import generateAuthUrl from "./gmail/genrateOauthurl.js";
+import handleOauthCallback from "./gmail/handleOauthcallback.js";
+
 
 
 
@@ -61,7 +64,10 @@ app.use('/', AIEmailgenerationRouter);   // AI Email Generation Router
 
 
 
+// Gmail OAuth Endpoints
 
+app.get('/api/gmail/generateAuthUrl', generateAuthUrl); // Endpoint to generate Gmail OAuth URL
+app.get('/api/gmail/callback', handleOauthCallback); // Endpoint to handle Gmail OAuth callback
 
 
 
